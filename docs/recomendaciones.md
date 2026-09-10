@@ -30,7 +30,7 @@ automática.
 
 La documentación describe bien la instalación, pero no explica el flujo de
 colaboración. Se recomienda documentar en el `README.md` (o en un
-`CONTRIBUATING.md`) los pasos para proponer cambios: hacer fork, crear una rama
+`CONTRIBUTING.md`) los pasos para proponer cambios: hacer fork, crear una rama
 descriptiva, escribir mensajes de commit claros en modo imperativo
 ("Agrega...", "Corrige...") y abrir un Pull Request describiendo qué se agregó,
 qué se modificó y qué aporta.
@@ -46,3 +46,28 @@ Organizador Personal
 ```
 
 Esto sirve como prueba mínima de que el entorno quedó bien configurado.
+
+## 5. Agregar pruebas automatizadas con `pytest`
+
+El proyecto no cuenta con pruebas. Se recomienda crear una carpeta `tests/` con
+un test mínimo que verifique la salida de `src/main.py`, y registrar `pytest`
+en `requirements.txt`. Por ejemplo, `tests/test_main.py`:
+
+```python
+import subprocess
+import sys
+
+
+def test_main_imprime_titulo():
+    resultado = subprocess.run(
+        [sys.executable, "src/main.py"],
+        capture_output=True,
+        text=True,
+    )
+    assert resultado.stdout.strip() == "Organizador Personal"
+```
+
+Se ejecuta con `pytest` desde la raíz del proyecto. Aunque la práctica no se
+centra en programar, tener una prueba automatizada básica documenta el
+comportamiento esperado y facilita detectar regresiones cuando el proyecto
+crezca.

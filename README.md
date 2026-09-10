@@ -51,6 +51,24 @@ documentación base, el entorno virtual y el registro de dependencias. Aún no
 se implementa la lógica de la aplicación; el siguiente paso es la colaboración
 mediante fork y Pull Request.
 
+## Colaboración
+
+Este repositorio forma parte de la práctica integradora de Git y GitHub. La
+colaboración se realiza mediante **fork y Pull Request**:
+
+1. La persona colaboradora hace un *fork* del repositorio original.
+2. Clona su fork y crea una rama de trabajo (`mejora-documentacion`).
+3. Realiza sus aportaciones en esa rama y las sube a su fork con `push`.
+4. Abre un *Pull Request* hacia la rama `main` del repositorio original.
+5. La persona propietaria revisa el Pull Request y usa *Approve* o
+   *Request changes* antes de hacer el *merge*.
+6. Tras el *merge*, la persona propietaria sincroniza su repositorio local con
+   `git pull origin main`.
+
+Aportaciones de esta ronda: se agregó `docs/recomendaciones.md` con
+recomendaciones de mejora y esta sección de colaboración en el `README.md`.
+Colaboradora: `santsss01`.
+
 ## Autor
 
 Justin Emiliano Rodríguez Franco (`justin12f`)
